@@ -17,13 +17,15 @@ class AoC
     public function execute(int $puzzle, int $part, bool $real_input): void
     {
         $data = $this->readInput($puzzle, $real_input);
+        $expected = include(__DIR__ . '/../data/expected.php');
 
-        $puzzle = 'Shadowinek\\Aoc2021\\Puzzle' . $this->getNumberString($puzzle) . 'Part' . $this->getNumberString($part);
+        $class = 'Shadowinek\\Aoc2021\\Puzzle' . $this->getNumberString($puzzle) . 'Part' . $this->getNumberString($part);
 
         echo 'Puzzle: ' . $this->getNumberString($puzzle) . PHP_EOL;
         echo 'Part: ' . $this->getNumberString($part) . PHP_EOL;
         echo 'Dataset: ' . ($real_input ? 'real' : 'test') . PHP_EOL;
         echo '===============' . PHP_EOL;
-        echo 'Output: ' . (class_exists($puzzle) ? (new $puzzle($data))->run() : 'This puzzle is not defined yet!') . PHP_EOL;
+        echo 'Output: ' . (class_exists($class) ? (new $class($data))->run() : 'This puzzle is not defined yet!') . PHP_EOL;
+        echo 'Expected: ' . ($expected[$puzzle][$part][$real_input] ?? '-') . PHP_EOL;
     }
 }
