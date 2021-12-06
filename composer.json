@@ -1,0 +1,17 @@
+{
+    "name": "shadowinek/aoc2021",
+    "description": "Advent of Code 2021",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shadowinek\\Aoc2021\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Milan Beran",
+            "email": "milan.beran@gmail.com"
+        }
+    ]
+}
