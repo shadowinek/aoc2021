@@ -4,7 +4,7 @@ namespace Shadowinek\Aoc2021;
 
 class Puzzle03Part01 extends AbstractPuzzle
 {
-    function run(): int
+    public function run(): int
     {
         $gamma = [];
         $epsilon = [];

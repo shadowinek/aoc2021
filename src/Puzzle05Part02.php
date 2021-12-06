@@ -4,7 +4,7 @@ namespace Shadowinek\Aoc2021;
 
 class Puzzle05Part02 extends Puzzle05Part01
 {
-    function run(): int
+    public function run(): int
     {
         $diagram = [];
         foreach ($this->data as $i => $entry) {

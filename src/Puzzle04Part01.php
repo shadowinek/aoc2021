@@ -4,7 +4,7 @@ namespace Shadowinek\Aoc2021;
 
 class Puzzle04Part01 extends AbstractPuzzle
 {
-    function run(): int
+    public function run(): int
     {
         $numbers = explode(',', array_shift($this->data));
         $this->data = array_filter($this->data);

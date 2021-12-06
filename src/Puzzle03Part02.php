@@ -4,7 +4,7 @@ namespace Shadowinek\Aoc2021;
 
 class Puzzle03Part02 extends AbstractPuzzle
 {
-    function run(): int
+    public function run(): int
     {
         $count = $this->findCommonBit($this->data, 0);
         $oxygen = $this->findValue($this->data, $count, 0, true);

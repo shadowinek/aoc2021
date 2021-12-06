@@ -4,7 +4,7 @@ namespace Shadowinek\Aoc2021;
 
 class Puzzle01Part02 extends AbstractPuzzle
 {
-    function run(): int
+    public function run(): int
     {
         $sum_old = [];
         $increase = 0;
