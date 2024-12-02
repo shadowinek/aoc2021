@@ -6,7 +6,15 @@ class AoC
 {
     private function readInput(int $puzzle, bool $real_input): array
     {
-        return file(sprintf(__DIR__ . '/../data/puzzle_%s%s',  $this->getNumberString($puzzle), $real_input ? '' : '_test') , FILE_IGNORE_NEW_LINES);
+        return file(
+            sprintf(
+                __DIR__ . '/../input%s/puzzle_%s%s',
+                $real_input ? '' : '_test',
+                $this->getNumberString($puzzle),
+                $real_input ? '' : '_test'
+            )
+            , FILE_IGNORE_NEW_LINES
+        );
     }
 
     private function getNumberString(string $number): string
@@ -17,7 +25,7 @@ class AoC
     public function execute(int $puzzle, int $part, bool $real_input): void
     {
         $data = $this->readInput($puzzle, $real_input);
-        $expected = include(__DIR__ . '/../data/expected.php');
+        $expected = include(__DIR__ . '/../output/expected.php');
 
         $class = 'Shadowinek\\Aoc2021\\Puzzle' . $this->getNumberString($puzzle) . 'Part' . $this->getNumberString($part);
 
